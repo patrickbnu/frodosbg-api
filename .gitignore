@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+.env
 
 # testing
 /coverage
@@ -28,3 +29,4 @@ yarn-error.log*
 .env.build
 
 package-lock.json
+.vercel

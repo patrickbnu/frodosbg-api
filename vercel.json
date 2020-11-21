@@ -1,0 +1,7 @@
+{
+    "name": "frodosbg-api",
+    "version": 2,
+    "env": {
+      "MONGODB_URI": "@frodosbg-mongo-uri"
+    }
+  }
