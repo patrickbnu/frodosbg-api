@@ -1,0 +1,22 @@
+{
+  "name": "frodosbg-back",
+  "version": "1.0.0",
+  "description": "Frodo's BG backend api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickbnu/frodosbg-api.git"
+  },
+  "author": "Patrick Nascimento",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patrickbnu/frodosbg-api/issues"
+  },
+  "homepage": "https://github.com/patrickbnu/frodosbg-api#readme",
+  "dependencies": {
+    "mongodb": "^3.6.3"
+  }
+}
