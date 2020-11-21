@@ -1,7 +1,7 @@
 {
   "name": "frodosbg-api",
   "version": "1.0.0",
-  "description": "Frodo's BG backend api",
+  "description": "Frodo's BG backend api 2",
   "main": "api\boards.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
