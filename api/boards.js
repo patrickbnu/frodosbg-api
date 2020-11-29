@@ -2,6 +2,13 @@
 const url = require('url')
 const MongoClient = require('mongodb').MongoClient
 
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
+  'Access-Control-Max-Age': 2592000, // 30 days
+  /** add other headers as per requirement */
+};
+
 // Create cached connection variable
 let cachedDb = null
 
