@@ -37,13 +37,16 @@ module.exports = async (req, res) => {
   const collection = await db.collection('boards')
 
   // Select the users collection from the database
-  const boards = await collection.find(
-              {},
-              { projection : {name: 1, category: 1, isRented : 1, _id: 0}}
-  ).toArray()
+  const boards = await collection.find({url:req.query.url}).toArray()
+  //const boards = await collection.find({}).toArray()
   
 
   // Respond with a JSON string of all users in the collection
   res.status(200).json({boards})
-  
+
+ /* res.status(200).json({
+    body: req.body,
+    query: req.query,
+    cookies: req.cookies,
+  })*/
 }
