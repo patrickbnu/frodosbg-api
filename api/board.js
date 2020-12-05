@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
   // Select the users collection from the database
   const board = await collection.find(
               { url : req.query.name},
-              { projection : { _id: 0}}
+              { projection : { _id: 0, __v : 0, }}
   ).toArray()
   
 
