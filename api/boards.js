@@ -40,7 +40,7 @@ module.exports = async (req, res) => {
   const boards = await collection.find(
               {},
               { projection : {name: 1, category: 1, isRented : 1, _id: 0}}
-  ).toArray()
+  ).sort({name : 1}).toArray()
   
 
   // Respond with a JSON string of all users in the collection
