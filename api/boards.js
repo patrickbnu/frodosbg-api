@@ -39,9 +39,35 @@ module.exports = async (req, res) => {
   // Select the users collection from the database
   const boards = await collection.find(
               {},
-              { projection : {name: 1, category: 1, isRented : 1, _id: 0}}
+              { projection : {
+                        name: 1, 
+                        category: 1, 
+                        isRented : 1, 
+                        minPlayers : 1,
+                        maxPlayers : 1,
+                        minimumAge : 1,
+                        duration : 1,
+                        complexityRating : 1,
+                        _id: 0}
+              }
   ).sort({name : 1}).toArray()
   
+
+
+  minPlayers: { type: Number },
+
+  // quantidade máxima de jogadores
+  maxPlayers: { type: Number },
+
+  // idade mínima
+  minimumAge: { type: Number },
+
+  // duração da partida
+  duration: { type: Number },
+
+  // bível de complexidade (1-5)
+  complexityRating: { type: Number },
+
 
   // Respond with a JSON string of all users in the collection
   res.status(200).json({boards})
