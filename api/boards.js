@@ -38,7 +38,15 @@ module.exports = async (req, res) => {
 
   // Select the users collection from the database
   const boards = await collection.find(
-              {},
+              {
+                $or: [
+
+
+                  {'isRentAvailable': { $exists: false }},
+                  {'isRentAvailable': { $eq: true  } }
+              ] 
+              
+              },
               { projection : {
                         name: 1, 
                         category: 1, 
@@ -48,6 +56,7 @@ module.exports = async (req, res) => {
                         minimumAge : 1,                        
                         duration : 1,
                         complexityRating : 1,
+                        isRentAvailable: 1,
                         _id: 0}
               }
   ).sort({name : 1}).toArray()
