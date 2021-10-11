@@ -2,6 +2,9 @@
 const url = require('url')
 const MongoClient = require('mongodb').MongoClient
 
+var ObjectId = require('mongodb').ObjectId; 
+
+
 // Create cached connection variable
 let cachedDb = null
 
@@ -36,10 +39,14 @@ module.exports = async (req, res) => {
   // Select the "users" collection from the database
   const collection = await db.collection('boards')
 
+
+  var id = req.query.id;       
+  var o_id = new ObjectId(id);  
+
   // Select the users collection from the database
   const board = await collection.find(
-              { url : req.query.name},
-              { projection : { _id: 0, __v : 0, }}
+              { "_id" : o_id} ,
+              { projection : { __v : 0, }}
   ).toArray()
   
 

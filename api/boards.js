@@ -56,7 +56,7 @@ module.exports = async (req, res) => {
                         complexityRating : 1,
                         isRentAvailable: 1,
                         registrationDate: 1,
-                        _id: 0}
+                        _id: 1}
               }
   ).sort({name : 1}).toArray()
   
